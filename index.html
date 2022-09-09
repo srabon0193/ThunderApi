@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <title>volt</title>
+    <link rel="icon" href="Icon.png" type="image/png">
+</head>
+
+<body>
+    <div class="bar1">
+        <!-- Image and text -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="Icon.png" width="40" height="35" class="d-inline-block align-top" alt="VOLT"
+                    title="volt" />
+                VOLT
+            </a>
+        </nav>
+    </div>
+
+    <div class="row ">
+        <div class="col-6 border-right">
+            <form>
+                <div class="form-group mx-sm-3 m-1 p-2">
+                    <label for="example">
+                        <h3>Select</h3>
+                    </label>
+                    <select class="form-control" id="example">
+                        <option>GET</option>
+                        <option>POST</option>
+                        <option>PUT</option>
+                        <option>DELETE</option>
+                        <option>PATCH</option>
+                        <option>HEAD</option>
+                        <option>OPTIONS</option>
+                        <option>PROPFIND</option>
+                    </select>
+
+                    <input type="text" class="form-cont mr-sm-2" id="input"
+                        placeholder="https://www.voltclient.com/welcome" />
+                    <button type="submit" class="btn btn-primary mb-2">Send</button>
+                </div>
+            </form>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active text-info" id="query-tab" data-toggle="tab" href="#query" role="tab"
+                        aria-controls="query" aria-selected="true">Query</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="header-tab" data-toggle="tab" href="#header" role="tab"
+                        aria-controls="header" aria-selected="false">Header</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="auth-tab" data-toggle="tab" href="#auth" role="tab"
+                        aria-controls="auth" aria-selected="false">Auth</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="body-tab" data-toggle="tab" href="#body" role="tab"
+                        aria-controls="body" aria-selected="false">Body</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="tests-tab" data-toggle="tab" href="#tests" role="tab"
+                        aria-controls="tests" aria-selected="false">Tests</a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active m-2 p-2" id="query" role="tabpanel" aria-labelledby="query-tab">
+                    <h3>Query Parameters</h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control ml-2 mr-1" aria-label="Text input with checkbox"
+                            placeholder="parameter">
+                        <input type="text" class="form-control ml-1 mr-1" aria-label="Text input with checkbox"
+                            placeholder="value">
+                    </div>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="header" role="tabpanel" aria-labelledby="header-tab">
+                    <h3>Http Header</h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control ml-2 mr-1" aria-label="Text input with checkbox"
+                            placeholder="Accept">
+                        <input type="text" class="form-control ml-1 mr-1" aria-label="Text input with checkbox"
+                            placeholder="*/*">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control ml-2 mr-1" aria-label="Text input with checkbox"
+                            placeholder="User-Agent">
+                        <input type="text" class="form-control ml-1 mr-1" aria-label="Text input with checkbox"
+                            placeholder="Volt Client(https://wwww.voltclient.com)">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                            </div>
+                        </div>
+                        <input type="text" class="form-control ml-2 mr-1" aria-label="Text input with checkbox"
+                            placeholder="header">
+                        <input type="text" class="form-control ml-1 mr-1" aria-label="Text input with checkbox"
+                            placeholder="value">
+                    </div>
+                </div>
+
+                <div class="tab-pane " id="auth" role="tabpanel" aria-labelledby="auth-tab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active text-info" id="query-tab" data-toggle="tab" href="#none"
+                                role="tab" aria-controls="none" aria-selected="true">None</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="header-tab" data-toggle="tab" href="#basic" role="tab"
+                                aria-controls="basic" aria-selected="false">Basic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="auth-tab" data-toggle="tab" href="#bearer" role="tab"
+                                aria-controls="bearer" aria-selected="false">Bearer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="body-tab" data-toggle="tab" href="#oauth" role="tab"
+                                aria-controls="oauth" aria-selected="false">Oauth 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="tests-tab" data-toggle="tab" href="#ntlm" role="tab"
+                                aria-controls="ntlm" aria-selected="false">Ntlm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="tests-tab" data-toggle="tab" href="#aws" role="tab"
+                                aria-controls="aws" aria-selected="false">Aws</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-pane " id="body" role="tabpanel" aria-labelledby="body-tab">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active text-info" id="json-tab" data-toggle="tab" href="#json" role="tab"
+                                aria-controls="json" aria-selected="true">Json</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="xml-tab" data-toggle="tab" href="#xml" role="tab"
+                                aria-controls="xml" aria-selected="false">Xml</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="text-tab" data-toggle="tab" href="#text" role="tab"
+                                aria-controls="text" aria-selected="false">Text</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="form-tab" data-toggle="tab" href="#form" role="tab"
+                                aria-controls="form" aria-selected="false">Form</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="form-encode-tab" data-toggle="tab" href="#form-encode"
+                                role="tab" aria-controls="form-encode" aria-selected="false">Form-encode</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="graphql-tab" data-toggle="tab" href="#graphql" role="tab"
+                                aria-controls="graphql" aria-selected="false">Graphql</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-info" id="binary-tab" data-toggle="tab" href="#binary" role="tab"
+                                aria-controls="binary" aria-selected="false">Binary</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="tests" role="tabpanel" aria-labelledby="tests-tab">
+                    <h3>Tests</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-dark dropdown-toggle mr-2 ml-2" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">ResponseCode</a>
+                            <a class="dropdown-item" href="#">ResponseBody</a>
+                            <a class="dropdown-item" href="#">ResponseTime</a>
+                            <a class="dropdown-item" href="#">Content-Type</a>
+                            <a class="dropdown-item" href="#">Content-Length</a>
+                            <a class="dropdown-item" href="#">Content-Encoding</a>
+                            <a class="dropdown-item" href="#">Header</a>
+                            <a class="dropdown-item" href="#">Json Query</a>
+                            <a class="dropdown-item" href="#">Set Env Variable</a>
+                        </div>
+                    </div>
+                    <div class="btn-group dropright" role="group">
+                        <button class="btn btn-dark dropdown-toggle mr-2 ml-2" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            action
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">equal</a>
+                            <a class="dropdown-item" href="#">not equal</a>
+                            <a class="dropdown-item" href="#">contains</a>
+                            <a class="dropdown-item" href="#">notContains</a>
+                            <a class="dropdown-item" href="#">count</a>
+                            <a class="dropdown-item" href="#">isType</a>
+                            <a class="dropdown-item" href="#">isJson</a>
+                            <a class="dropdown-item" href="#">regex</a>
+                            <a class="dropdown-item" href="#">schema</a>
+                            <a class="dropdown-item" href="#">&#60;</a>
+                            <a class="dropdown-item" href="#">&le;</a>
+                            <a class="dropdown-item" href="#">&gt;</a>
+                            <a class="dropdown-item" href="#">&ge;</a>
+                        </div>
+                        <input type="text" class="form-control ml-3 " aria-label="Text input with checkbox"
+                            placeholder="value">
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-6 ">
+            <ul class="navbar-nav m-2 p-2 font-weight-bold">
+                <li class="mt-5">Status:</li>
+                <li>Size:</li>
+                <li>Time:</li>
+            </ul>
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item ">
+                    <a class="nav-link active text-info" id="response-tab" data-toggle="tab" href="#response" role="tab" aria-controls="response" aria-selected="true">Response</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="headers-tab" data-toggle="tab" href="#headers" role="tab" aria-controls="headers" aria-selected="false">Headers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="cookies-tab" data-toggle="tab" href="#cookies" role="tab" aria-controls="cookies" aria-selected="false">Cookies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="results-tab" data-toggle="tab" href="#results" role="tab" aria-controls="results" aria-selected="false">Results</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="docs-tab" data-toggle="tab" href="#docs" role="tab" aria-controls="docs" aria-selected="false">Docs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" id="sp-tab" data-toggle="tab" href="#sp" role="tab" aria-controls="sp" aria-selected="false">{ }</a>
+                </li>
+                <div class="btn-group dropleft">
+                    <button type="button" class="btn dropdown-toggle m-2 p-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ☰
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Save to File</a>
+                        <a class="dropdown-item" href="#">Open in Code</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Word Wrap: ON</a>
+                    </div>
+                </div>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active m-2 p-2" id="response" role="tabpanel" aria-labelledby="response-tab">
+                        <h2 class="text-danger">Connection was refused by the server.</h2>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="headers" role="tabpanel" aria-labelledby="headers-tab">
+                    <h2 >Response Headers</h2>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="cookies" role="tabpanel" aria-labelledby="cookies-tab">
+                    <h2 >Request Url</h2>
+                    <br>
+                    <h4 class="btn-group">No Cookies Available</h4>
+                    <button type="submit" class="btn btn-outline-dark ml-5 ">Clear All</button>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="results" role="tabpanel" aria-labelledby="results-tab">
+                    <h3>No Test Result Available</h3>
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="docs" role="tabpanel" aria-labelledby="docs-tab">
+                    <h2 class="btn-group">No Cookies Available</h2>
+                    <button type="submit" class="btn btn-outline-dark ml-5 ">Clear All</button>
+                    <br><br><br>
+                    <h4 >No documentation available</h4>  
+                </div>
+
+                <div class="tab-pane m-2 p-2" id="sp" role="tabpanel" aria-labelledby="sp-tab">
+                    
+                    <div class="btn-group">
+                        <h3>Code</h3>
+                        <button class="btn btn-dark dropdown-toggle mr-3 ml-5" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">C</a>
+                            <a class="dropdown-item" href="#">Clojure</a>
+                            <a class="dropdown-item" href="#">C#</a>
+                            <a class="dropdown-item" href="#">cURL</a>
+                            <a class="dropdown-item" href="#">Dart</a>
+                            <a class="dropdown-item" href="#">Go</a>
+                            <a class="dropdown-item" href="#">HTTP</a>
+                            <a class="dropdown-item" href="#">Java</a>
+                            <a class="dropdown-item" href="#">Javascript</a>
+                            <a class="dropdown-item" href="#">Kotlin</a>
+                            <a class="dropdown-item" href="#">Node.js</a>
+                            <a class="dropdown-item" href="#">Objective-C</a>
+                            <a class="dropdown-item" href="#">OCaml</a>
+                            <a class="dropdown-item" href="#">PHP</a>
+                            <a class="dropdown-item" href="#">Powershell</a>
+                            <a class="dropdown-item" href="#">Python</a>
+                            <a class="dropdown-item" href="#">R</a>
+                            <a class="dropdown-item" href="#">Ruby</a>
+                            <a class="dropdown-item" href="#">Shell</a>
+                            <a class="dropdown-item" href="#">Swift</a>
+                        </div>
+                    </div>
+                    <div class="btn-group " role="group">
+                        <button class="btn btn-dark dropdown-toggle mr-3 ml-3" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            action
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">NSURLSession</a>
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark ml-5 ">Clear All</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
