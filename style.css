@@ -1,13 +1,10 @@
-body {
-    background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
-}
 
 .form-control {
     width: 122px ;
 }
 
 .form-cont {
-    width: 45% ;
+    width: 260px ;
 }
 
 .nav .nav-item {
